@@ -1,11 +1,17 @@
-# README
+# Учебный проект на Thinknetika: Test-Guru
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Приложение для создания и управления тестами(вопоросы/ответы).
+
+Список сущностей, которые понадобятся на проекте:
+* Сами вопросы
+* Варианты ответов, которые будут привязаны к вопросам
+* Тесты, у которых будут вопросы
+* Пользователи
+* Группы пользователей
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version: 2.6.0
 
 * System dependencies
 
