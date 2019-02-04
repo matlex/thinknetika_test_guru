@@ -27,20 +27,27 @@ PassedTest.create(user_id: user1.id, test_id: test4.id)
 PassedTest.create(user_id: user2.id, test_id: test5.id)
 PassedTest.create(user_id: user2.id, test_id: test6.id)
 
-test1.questions << Question.create(body: 'Question 1 about something?')
-test2.questions << Question.create(body: 'Question 2 about something?')
-test3.questions << Question.create(body: 'Question 3 about something?')
-test4.questions << Question.create(body: 'Question 4 about something?')
-test6.questions << Question.create(body: 'Question 5 about something?')
-test6.questions << Question.create(body: 'Question 6 about something?')
+q1 = Question.create(body: 'Question 1 about something?')
+q2 = Question.create(body: 'Question 2 about something?')
+q3 = Question.create(body: 'Question 3 about something?')
+q4 = Question.create(body: 'Question 4 about something?')
+q5 = Question.create(body: 'Question 5 about something?')
+q6 = Question.create(body: 'Question 6 about something?')
 
-Answer.create(body: 'Answer 1', correct: true)
-Answer.create(body: 'Answer 2')
-Answer.create(body: 'Answer 3')
-Answer.create(body: 'Answer 4')
-Answer.create(body: 'Answer 5')
-Answer.create(body: 'Answer 6', correct: true)
-Answer.create(body: 'Answer 7')
-Answer.create(body: 'Answer 8')
-Answer.create(body: 'Answer 9')
-Answer.create(body: 'Answer10')
+test1.questions << q1
+test2.questions << q2
+test3.questions << q3
+test4.questions << q4
+test6.questions << q5
+test6.questions << q6
+
+q5.answers << Answer.create(body: 'Answer 1', correct: true)
+q5.answers << Answer.create(body: 'Answer 2')
+q5.answers << Answer.create(body: 'Answer 3')
+q5.answers << Answer.create(body: 'Answer 4')
+q5.answers << Answer.create(body: 'Answer 5')
+q6.answers << Answer.create(body: 'Answer 6', correct: true)
+q6.answers << Answer.create(body: 'Answer 7')
+q6.answers << Answer.create(body: 'Answer 8')
+q6.answers << Answer.create(body: 'Answer 9')
+q6.answers << Answer.create(body: 'Answer10')
