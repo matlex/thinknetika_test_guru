@@ -9,18 +9,16 @@
 user1 = User.create(first_name: 'Matt', last_name: 'Ustinov', email: 'matt@mail.com')
 user2 = User.create(first_name: 'Bob', last_name: 'Supp', email: 'bsupp@mail.com')
 
-author1 = Author.create(first_name: 'Author', last_name: 'Authorious')
-
 category1 = Category.create(title: 'Programming')
 category2 = Category.create(title: 'Driving')
 category3 = Category.create(title: 'Cooking')
 
-test1 = Test.create(title: 'RoR beginner', level: 'beginner', category: category1, author: author1)
-test2 = Test.create(title: 'RoR pro', level: 'pro', category: category1, author: author1)
-test3 = Test.create(title: 'Ruby beginner', level: 'beginner', category: category1, author: author1)
-test4 = Test.create(title: 'Ruby pro', level: 'pro', category: category1, author: author1)
-test5 = Test.create(title: 'Car driving beginner', level: 'beginner', category: category2, author: author1)
-test6 = Test.create(title: 'Car driving pro', level: 'pro', category: category2, author: author1)
+test1 = Test.create(title: 'RoR beginner', level: 'beginner', category: category1, author: user1)
+test2 = Test.create(title: 'RoR pro', level: 'pro', category: category1, author: user1)
+test3 = Test.create(title: 'Ruby beginner', level: 'beginner', category: category1, author: user1)
+test4 = Test.create(title: 'Ruby pro', level: 'pro', category: category1, author: user1)
+test5 = Test.create(title: 'Car driving beginner', level: 'beginner', category: category2, author: user1)
+test6 = Test.create(title: 'Car driving pro', level: 'pro', category: category2, author: user1)
 
 PassedTest.create(user_id: user1.id, test_id: test1.id)
 PassedTest.create(user_id: user1.id, test_id: test2.id)
