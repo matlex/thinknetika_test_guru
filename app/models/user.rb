@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :created_tests, class_name: 'Test'
+
   has_many :passed_tests
   has_many :tests, through: :passed_tests
 
