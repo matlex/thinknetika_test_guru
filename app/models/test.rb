@@ -6,6 +6,11 @@ class Test < ApplicationRecord
   has_many   :passed_tests
   has_many   :users, through: :passed_tests
 
+  scope :by_level,     -> (level) { where(level: level) }
+  scope :easy_level,   -> { by_level(0..1) }
+  scope :middle_level, -> { by_level(2..4) }
+  scope :pro_level,    -> { by_level(5..Float::INFINITY) }
+
   def self.get_by_category(title)
     joins(:category).where(categories: {title: title}).order('tests.title DESC').pluck("tests.title")
   end
