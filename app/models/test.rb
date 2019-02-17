@@ -14,9 +14,20 @@ class Test < ApplicationRecord
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0}
   validates :category, presence: true
+  validate  :validate_by_level_and_title, on: :create
 
   def self.get_by_category(title)
     joins(:category).where(categories: {title: title}).order('tests.title DESC').pluck("tests.title")
+  end
+
+  def self.by_level_and_title(level, title)
+    where(level: level, title: title)
+  end
+
+  private
+
+  def validate_by_level_and_title
+    errors.add(:base, "A test with same level and category already exists") if self.class.by_level_and_title(level, title).exists?
   end
 
 end
