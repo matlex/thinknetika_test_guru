@@ -10,18 +10,20 @@ class Test < ApplicationRecord
   scope :easy_level,   -> { by_level(0..1) }
   scope :middle_level, -> { by_level(2..4) }
   scope :pro_level,    -> { by_level(5..Float::INFINITY) }
+  scope :by_category,  -> (title) { joins(:category).where(categories: {title: title}) }
 
   validates :title, presence: true
   validates :level, numericality: { only_integer: true, greater_than: 0}
   validates :category, presence: true
   validate  :validate_by_level_and_title, on: :create
 
-  def self.get_by_category(title)
-    joins(:category).where(categories: {title: title}).order('tests.title DESC').pluck("tests.title")
-  end
 
   def self.by_level_and_title(level, title)
     where(level: level, title: title)
+  end
+
+  def self.title_by_category(title)
+    by_category(title).order('tests.title DESC').pluck("tests.title")
   end
 
   private
