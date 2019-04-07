@@ -11,4 +11,21 @@ class QuestionsController < ApplicationController
     render inline: "Question text: <%= @question.body %>"
   end
 
+  def new
+
+  end
+
+  def create
+    test = Test.find(params[:test_id])
+    question = test.questions.create(question_params)
+
+    render plain: question.inspect
+  end
+
+  private
+
+  def question_params
+    params.require(:question).permit(:body)
+  end
+
 end
