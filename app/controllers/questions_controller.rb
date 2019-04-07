@@ -1,6 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :find_test, only: %i[index create]
+
   def index
-    @test = Test.find(params[:test_id])
     @questions = @test.questions.all
 
     render inline: "Current test is: <%= @test.title %></br><ul><% @questions.each do |p| %><li><p><%= p.body %></p></li><% end %></p>"
@@ -16,8 +17,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    test = Test.find(params[:test_id])
-    question = test.questions.create(question_params)
+    question = @test.questions.create(question_params)
 
     render plain: question.inspect
   end
@@ -25,10 +25,15 @@ class QuestionsController < ApplicationController
   def destroy
     question = Question.find(params[:id])
     question.destroy
+
     redirect_to tests_path
   end
 
   private
+
+  def find_test
+    @test = Test.find(params[:test_id])
+  end
 
   def question_params
     params.require(:question).permit(:body)
