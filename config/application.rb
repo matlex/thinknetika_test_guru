@@ -17,7 +17,7 @@ module ThinknetikaTestGuru
     # the framework and any gems in your application.
     config.time_zone = 'Almaty'
 
-    config.i18n.default_locale = :ru
-    I18n.available_locales = [:ru, :en]
+    config.i18n.default_locale = :en
+    I18n.available_locales = [:en]
   end
 end
