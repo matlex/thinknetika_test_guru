@@ -5,23 +5,38 @@ class QuestionsController < ApplicationController
 
   def index
     @questions = @test.questions.all
-
-    render inline: "Current test is: <%= @test.title %></br><ul><% @questions.each do |p| %><li><p><%= p.body %></p></li><% end %></p>"
   end
 
   def show
     @question = Question.find(params[:id])
-    render inline: "Question text: <%= @question.body %>"
+  end
+
+  def edit
+    @question = Question.find(params[:id])
   end
 
   def new
+    @question = Question.new
+  end
 
+  def update
+    @question = Question.find(params[:id])
+
+    if @question.update(question_params)
+      redirect_to @question
+    else
+      render :edit
+    end
   end
 
   def create
-    question = @test.questions.create(question_params)
+    @question = Question.new(question_params)
 
-    render plain: question.inspect
+    if @question.save
+      redirect_to @test
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -38,7 +53,7 @@ class QuestionsController < ApplicationController
   end
 
   def question_params
-    params.require(:question).permit(:body)
+    params.require(:question).permit(:body, :test_id)
   end
 
   def rescue_with_question_not_found
