@@ -1,17 +1,12 @@
-<%= form_with model: [@test, @question], local: true do |form| %>
+<%= form_with model: [@test, @question], local: true  do |form| %>
   <%= render 'shared/errors', resource: @question %>
 
   <p>
     <%= form.label :body, "Question text:" %><br>
-    <%= form.text_field :body %>
+    <%= form.text_field :body, size: 50  %>
   </p>
 
   <p>
-    <%= form.label :test_id %>:
-    <%= form.collection_select :test_id, Test.all, :id, :title, prompt: true %>
-  </p>
-
-  <p>
-    <%= form.submit btn_title %> | <%= link_to "Cancel", test_questions_path(@question.test_id || params[:test_id]) %>
+    <%= form.submit btn_title %> | <%= link_to "Cancel", test_path(@question.test_id || params[:test_id]) %>
   </p>
 <% end %>

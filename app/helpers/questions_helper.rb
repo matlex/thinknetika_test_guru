@@ -5,19 +5,17 @@ module QuestionsHelper
   end
 
   def github_url(title, repo_url)
-    render inline: "<a href=#{repo_url}>#{title}</a>"
+    link_to(title, repo_url, target: "_blank")
   end
 
-  def question_header_by(action, test_title)
-    case action
-      when :new
-        title = "<h1>Create a New #{test_title} Question</h1>"
-      when :edit
-        title = "<h1>Edit #{test_title} Question</h1>"
-      else
-        raise StandardError('Unknown action')
-    end
+  def question_header_by(question)
+    question_title = question.test.title
 
+    if question.new_record?
+      title = "<h1>Create a new question in '#{question_title}' test</h1>"
+    else
+      title = "<h1>Edit question in '#{question_title}' test</h1>"
+    end
     render inline: title
   end
 
