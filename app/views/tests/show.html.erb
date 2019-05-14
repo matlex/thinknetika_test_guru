@@ -8,5 +8,6 @@
   <%= render partial: "questions/question", collection: @test.questions %>
 </table>
 
+<br>
 <%= link_to('Back', tests_path) %> |
 <%= link_to('Add New', new_test_question_path(@test)) %>
