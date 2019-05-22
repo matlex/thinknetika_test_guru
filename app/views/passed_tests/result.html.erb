@@ -1,0 +1,5 @@
+<h1>The "<%= @current_test_passage.test.title %>" test completed.</h1>
+
+<h1>Your score is: <%= @current_test_passage.rate_percentage %></h1>
+
+<%= render 'result_message', rate_percentage: @current_test_passage.rate_percentage if @current_test_passage.completed? %>
