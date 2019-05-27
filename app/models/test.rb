@@ -7,8 +7,8 @@ class Test < ApplicationRecord
   has_many   :users, through: :passed_tests
 
   scope :by_level,     -> (level) { where(level: level) }
-  scope :easy_level,   -> { by_level(0..1) }
-  scope :middle_level, -> { by_level(2..4) }
+  scope :easy_level,   -> { by_level(1..2) }
+  scope :middle_level, -> { by_level(3..4) }
   scope :pro_level,    -> { by_level(5..Float::INFINITY) }
   scope :by_category,  -> (title) { joins(:category).where(categories: {title: title}) }
 
