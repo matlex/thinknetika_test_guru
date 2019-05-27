@@ -3,8 +3,7 @@ class PassedTest < ApplicationRecord
   belongs_to :test
   belongs_to :current_question, class_name: 'Question', optional: true
 
-  before_validation :before_validation_set_first_question, on: :create
-  before_validation :before_validation_set_next_question, on: :update
+  before_validation :before_validation_set_next_question
 
   def accept!(answer_ids)
     if correct_answer?(answer_ids)
@@ -23,7 +22,7 @@ class PassedTest < ApplicationRecord
   end
 
   def question_number
-    test.questions.pluck(:id).index(current_question.id) + 1
+    test.questions.order(id: :asc).pluck(:id).index(current_question.id) + 1
   end
 
   def questions_count
@@ -31,10 +30,6 @@ class PassedTest < ApplicationRecord
   end
 
   private
-
-  def before_validation_set_first_question
-    self.current_question = test.questions.first if test.present?
-  end
 
   def before_validation_set_next_question
     self.current_question = next_question
@@ -49,6 +44,10 @@ class PassedTest < ApplicationRecord
   end
 
   def next_question
-    self.test.questions.order(:id).where('id > ?', current_question.id).first
+    if self.current_question
+      self.test.questions.order(:id).where('id > ?', current_question.id).first
+    else
+      test.questions.first
+    end
   end
 end
