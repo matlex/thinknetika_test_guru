@@ -7,7 +7,7 @@ Rails.application.routes.draw do
              path_names: { sign_in: :login, sign_out: :logout },
              controllers: { sessions: 'users/sessions' }
 
-  resources :tests do
+  resources :tests, only: :index do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
     end
@@ -21,6 +21,10 @@ Rails.application.routes.draw do
     member do  # GET /passed_tests/101/result
       get :result
     end
+  end
+
+  namespace :admin do
+    resources :tests
   end
 
 end

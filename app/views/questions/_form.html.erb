@@ -7,6 +7,6 @@
   </p>
 
   <p>
-    <%= form.submit btn_title %> | <%= link_to "Cancel", test_path(@question.test_id || params[:test_id]) %>
+    <%= form.submit btn_title %> | <%= link_to "Cancel", admin_test_path(@question.test_id || params[:test_id]) %>
   </p>
 <% end %>
