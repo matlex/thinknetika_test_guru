@@ -1,13 +1,13 @@
 <div>
   <p class="nav bar">
-    Navigation: <%= link_to 'Test Guru', root_path %>
+    <%= t('.navigation') %>: <%= link_to 'Test Guru', root_path %>
 
     <% if user_signed_in? %>
-      | <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
-      | Welcome back, <b><%= current_user.first_name %></b>!
+      | <%= link_to t('.logout_link'), destroy_user_session_path, method: :delete %>
+      | <%= t('.welcome_back_html', username: current_user.first_name) %>
     <% else %>
-      | <%= link_to 'Sign Up', new_user_registration_path %>
-      | <%= link_to 'Log In', new_user_session_path %>
+      | <%= link_to t('.signup'), new_user_registration_path %>
+      | <%= link_to t('.login'), new_user_session_path %>
     <% end %>
   </p>
 </div>

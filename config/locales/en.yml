@@ -31,3 +31,103 @@
 
 en:
   hello: "Hello world"
+
+  helpers:
+    select:
+      prompt: "Choose"
+    submit:
+      test:
+        create: "Create test"
+        update:  "Update test"
+      user:
+        create: "Register"
+    label:
+      test:
+        title: "Title"
+        level: "Test level"
+        category_id: "Category"
+
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    navigation:
+      navigation: "Navigation"
+      logout_link: "Log out"
+      welcome_back_html: "Welcome back, <b>%{username}</b>!"
+      signup: "Sign Up"
+      login: "Log In"
+
+  tests:
+    index:
+      header: "List of all tests:"
+      test_number: "#"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      count_questions: "Count questions"
+      actions: "Actions"
+    test:
+      start_test_button: "Start"
+
+  passed_tests:
+    result:
+      header: 'Test "%{title}" was completed!'
+      score_message: "Your score is: %{scores}"
+    show:
+      title: "Current test is: %{test_title}"
+      button_next: "Next"
+    result_message:
+      passed_test_message: "You passed the test"
+      failed_test_message: "You failed the test"
+
+  admin:
+    tests:
+      index:
+        header: "List of all tests:"
+        link_new_test: "New test"
+      create:
+        success: "Test was successfully created!"
+      test:
+        link_to_show: "Show"
+        link_to_edit: "Edit"
+        are_you_sure: "Are you sure?"
+      show:
+        list_of_questions_title: 'List of questions for test #%{test_id} - "%{test_title}"'
+        question_text: "Question"
+        actions: "Actions"
+        link_to_back: "Back"
+        link_to_edit: "Edit"
+        link_to_add_question: "Add new question"
+      new:
+        title: "Create new test?"
+        link_to_back: "Back"
+      edit:
+        title: 'Edit "%{test_title}" test'
+        link_to_back: "Back"
+      update:
+        success: "Test successfully updated."
+    base:
+      not_authorized_to_see_the_page: "You are not authorized to view this page!"
+    navigation:
+      welcome_back_html: "Welcome, <b>%{username}</b> Guru Admin"
+      logout: "Log out"
+      link_index_admin_panel: "TestGuru Admin Panel"
+    questions:
+      question:
+        link_to_show: "Show"
+        link_to_edit: "Edit"
+        link_to_delete: "Delete"
+
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  layouts:
+    admin:
+      admin_panel_title: "Admin Panel"
+
+  question_num_of_total_html: "<h2>Question # %{question_number} of %{total}</h2>"
+  link_to_delete: "Delete"
+  delete_question_confirm_text: "Do you really want to delete question?"

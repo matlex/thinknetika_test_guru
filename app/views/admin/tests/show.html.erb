@@ -1,14 +1,14 @@
-<h1>List of questions for test #<%= @test.id %> - "<%= @test.title %>"</h1>
+<h1><%= t('.list_of_questions_title', test_id: @test.id, test_title: @test.title) %></h1>
 
 <table>
   <tr>
-    <th>Question text</th>
-    <th colspan="3">Actions</th>
+    <th><%= t('.question_text') %></th>
+    <th colspan="3"><%= t('.actions') %></th>
   </tr>
   <%= render partial: "admin/questions/question", collection: @test.questions %>
 </table>
 
 <br>
-<%= link_to 'Back', admin_tests_path %> |
-<%= link_to 'Edit', edit_admin_test_path(@test) %> |
-<%= link_to 'Add new question', new_admin_test_question_path(@test) %>
+<%= link_to t('.link_to_back'), admin_tests_path %> |
+<%= link_to t('.link_to_edit'), edit_admin_test_path(@test) %> |
+<%= link_to t('.link_to_add_question'), new_admin_test_question_path(@test) %>

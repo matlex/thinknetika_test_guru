@@ -1,13 +1,13 @@
-<h1>List of all tests:</h1>
+<h1><%= t('.header') %></h1>
 
 <table>
   <tr>
-    <th>ID</th>
-    <th>Test title</th>
-    <th>Level</th>
-    <th>Category</th>
-    <th>Count questions</th>
-    <th>Actions</th>
+    <th><%= t('.test_number') %></th>
+    <th><%= t('.title') %></th>
+    <th><%= t('.level') %></th>
+    <th><%= t('.category') %></th>
+    <th><%= t('.count_questions') %></th>
+    <th><%= t('.actions') %></th>
   </tr>
   <%= render @tests %>
 </table>
