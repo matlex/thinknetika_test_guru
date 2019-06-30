@@ -31,3 +31,105 @@
 
 ru:
   hello: "Привет Мир!"
+
+  helpers:
+    select:
+      prompt: "Выберите"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      user:
+        create: "Зарегистрировать"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень теста"
+        category_id: "Категория"
+
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    navigation:
+      navigation: "Навигация"
+      logout_link: "Выйти"
+      welcome_back_html: "С возвращением, <b>%{username}</b>!"
+      signup: "Регистрация"
+      login: "Вход"
+
+  tests:
+    index:
+      header: "Список всех тестов:"
+      test_number: "№"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      count_questions: "Количество вопросов"
+      actions: "Действия"
+    test:
+      start_test_button: "Начать"
+
+  passed_tests:
+    result:
+      header: 'Тест "%{title}" успешно завершен!'
+      score_message: "Ваша оценка: %{scores}"
+    show:
+      title: "Текущий тест: %{test_title}"
+      button_next: "Далее"
+    result_message:
+      passed_test_message: "Вы прошли тест"
+      failed_test_message: "Тест не пройден"
+
+  admin:
+    tests:
+      index:
+        header: "Список всех тестов:"
+        link_new_test: "Создать тест"
+      create:
+        success: "Тест был успешно создан!"
+      test:
+        link_to_show: "Просмотр"
+        link_to_edit: "Редактировать"
+        are_you_sure: "Вы уверены?"
+      show:
+        list_of_questions_title: 'Список вопросов для теста №%{test_id} - "%{test_title}"'
+        question_text: "Вопрос"
+        actions: "Действия"
+        link_to_back: "Назад"
+        link_to_edit: "Редактировать"
+        link_to_add_question: "Добавить новый вопрос"
+      new:
+        title: "Создадим новый тест?"
+        link_to_back: "Назад"
+      edit:
+        title: 'Редактировать тест "%{test_title}"'
+        link_to_back: "Назад"
+      update:
+        success: "Тест успешно обновлен."
+    base:
+      not_authorized_to_see_the_page: "Доступ к данной странице разрешен только администраторам"
+    navigation:
+      welcome_back_html: "С возвращением, <b>%{username}</b>"
+      logout: "Выйти"
+      link_index_admin_panel: "Административная панель Test Guru"
+    questions:
+      question:
+        link_to_show: "Показать"
+        link_to_edit: "Редактировать"
+        link_to_delete: "Удалить"
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что прошли тест на TestGuru!'
+
+  layouts:
+    admin:
+      admin_panel_title: "Панель администратора"
+
+  question_num_of_total_html: "<h2>Вопрос № %{question_number} из %{total}</h2>"
+  link_to_delete: "Удалить"
+  delete_question_confirm_text: "Вы уверены, что хотите удалить вопрос?"
