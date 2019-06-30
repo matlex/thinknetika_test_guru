@@ -53,7 +53,6 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     navigation:
-      navigation: "Navigation"
       logout_link: "Log out"
       welcome_back_html: "Welcome back, <b>%{username}</b>!"
       signup: "Sign Up"
@@ -113,7 +112,7 @@ en:
     navigation:
       welcome_back_html: "Welcome, <b>%{username}</b> Guru Admin"
       logout: "Log out"
-      link_index_admin_panel: "TestGuru Admin Panel"
+      test_guru_title: "TestGuru"
     questions:
       question:
         link_to_show: "Show"
@@ -128,6 +127,6 @@ en:
     admin:
       admin_panel_title: "Admin Panel"
 
-  question_num_of_total_html: "<h2>Question # %{question_number} of %{total}</h2>"
+  question_num_of_total_html: "<h3>Question # %{question_number} of %{total}</h3>"
   link_to_delete: "Delete"
   delete_question_confirm_text: "Do you really want to delete question?"

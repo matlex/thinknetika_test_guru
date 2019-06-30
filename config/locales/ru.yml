@@ -55,7 +55,6 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     navigation:
-      navigation: "Навигация"
       logout_link: "Выйти"
       welcome_back_html: "С возвращением, <b>%{username}</b>!"
       signup: "Регистрация"
@@ -115,7 +114,7 @@ ru:
     navigation:
       welcome_back_html: "С возвращением, <b>%{username}</b>"
       logout: "Выйти"
-      link_index_admin_panel: "Административная панель Test Guru"
+      test_guru_title: "Test Guru"
     questions:
       question:
         link_to_show: "Показать"
@@ -130,6 +129,6 @@ ru:
     admin:
       admin_panel_title: "Панель администратора"
 
-  question_num_of_total_html: "<h2>Вопрос № %{question_number} из %{total}</h2>"
+  question_num_of_total_html: "<h3>Вопрос № %{question_number} из %{total}</h3>"
   link_to_delete: "Удалить"
   delete_question_confirm_text: "Вы уверены, что хотите удалить вопрос?"
