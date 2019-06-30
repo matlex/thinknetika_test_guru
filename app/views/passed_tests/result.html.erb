@@ -1,5 +1,15 @@
-<h1><%= t('.header', title: @current_test_passage.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6 col-lg-12">
 
-<h1><%= t('.score_message', scores: @current_test_passage.rate_percentage) %></h1>
+    <div class="card">
+      <div class="card-header text-center">
+        <h1><%= t('.header', title: @current_test_passage.test.title) %></h1>
+      </div>
+      <div class="card-body">
+        <h4 class="card-title"><%= t('.score_message', scores: @current_test_passage.rate_percentage) %></h4>
+        <%= render 'result_message' %>
+      </div>
+    </div>
 
-<%= render 'result_message' %>
+  </div>
+</div>

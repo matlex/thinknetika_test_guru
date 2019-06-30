@@ -1,18 +1,33 @@
-<h1><%= t('.title', test_title: @current_test_passage.test.title) %></h1>
+<div class="row justify-content-center mt-3">
+  <div class="col col-md-6 col-lg-12">
+    <h1><%= t('.title', test_title: @current_test_passage.test.title) %></h1>
 
-<%= show_current_question_num_of_total %>
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= show_current_question_num_of_total %>
+        <%= show_progressbar %>
 
-<b>
-  <%= @current_test_passage.current_question.body %>
-</b>
+        <div class="card mt-3">
+          <div class="card-body">
+            <h4><%= @current_test_passage.current_question.body %></h4>
+          </div>
+        </div>
 
-<%= form_with url: passed_test_path(@current_test_passage), local: true, method: :put do |form| %>
-  <%= form.collection_check_boxes :answer_ids, @current_test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
-    <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
-      <%= b.label %>
-    </p>
-  <% end %>
+        <div class="card mt-3">
+          <div class="card-body">
+            <%= form_with url: passed_test_path(@current_test_passage), local: true, method: :put do |form| %>
+              <%= form.collection_check_boxes :answer_ids, @current_test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
+                <p>
+                  <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+                  <%= b.label %>
+                </p>
+              <% end %>
+              <%= form.submit t('.button_next'), class: "btn btn-primary" %>
+            <% end %>
+          </div>
+        </div>
 
-  <p><%= form.submit t('.button_next') %></p>
-<% end %>
+      </div>
+    </div>
+  </div>
+</div>
