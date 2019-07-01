@@ -5,4 +5,15 @@ module PassedTestsHelper
     output_string.html_safe
   end
 
+  def show_progressbar
+    progress = (@current_test_passage.question_number / @current_test_passage.questions_count.to_f) * 100
+    progress = progress.to_i
+    output_string = """
+      <div class=\"progress\">
+      <div class=\"progress-bar\" role=\"progressbar\" style=\"width: #{progress}%\" aria-valuenow=\"#{progress}\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>
+      </div>
+      """
+    output_string.html_safe
+  end
+
 end
