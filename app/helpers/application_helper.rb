@@ -6,7 +6,7 @@ module ApplicationHelper
     hash[:alert] = 'alert alert-warning'
   end
 
-  def flash_class(level)
-    BOOTSTRAP_FLASH_CLASSES[level]
+  def flash_class(type)
+    BOOTSTRAP_FLASH_CLASSES[type]
   end
 end
