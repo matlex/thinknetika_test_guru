@@ -52,6 +52,12 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+# Networking
+gem "octokit", "~> 4.0"
+
+# Environment
+gem 'dotenv-rails'
+
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
@@ -60,6 +66,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'pry'
+  gem 'pry-byebug'
 
   gem 'letter_opener'
 end
