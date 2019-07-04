@@ -123,6 +123,12 @@ ru:
         link_to_show: "Показать"
         link_to_edit: "Редактировать"
         link_to_delete: "Удалить"
+    gists:
+      index:
+        header: "Список Gists созданные пользователями"
+        question: "Вопрос"
+        url: "Ссылка"
+        user_email: "Email пользователя"
 
   tests_mailer:
     completed_test:

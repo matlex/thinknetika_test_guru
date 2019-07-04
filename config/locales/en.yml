@@ -121,6 +121,12 @@ en:
         link_to_show: "Show"
         link_to_edit: "Edit"
         link_to_delete: "Delete"
+    gists:
+      index:
+        header: "All Gists created by users"
+        question: "Question"
+        url: "URL"
+        user_email: "User email"
 
   tests_mailer:
     completed_test:
