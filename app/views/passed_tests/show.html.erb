@@ -15,6 +15,7 @@
 
         <div class="card mt-3">
           <div class="card-body">
+
             <%= form_with url: passed_test_path(@current_test_passage), local: true, method: :put do |form| %>
               <%= form.collection_check_boxes :answer_ids, @current_test_passage.current_question.answers, :id, :body, include_hidden: false do |b| %>
                 <p>
@@ -25,8 +26,9 @@
               <%= form.submit t('.button_next'), class: "btn btn-primary" %>
             <% end %>
           </div>
-        </div>
+          <%= link_to 'Gist Question', gist_passed_test_path(@current_test_passage), method: :post %>
 
+        </div>
       </div>
     </div>
   </div>

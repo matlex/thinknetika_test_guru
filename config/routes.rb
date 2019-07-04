@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :passed_tests, only: %i[show update] do
     member do  # GET /passed_tests/101/result
       get :result
+      post :gist
     end
   end
 
