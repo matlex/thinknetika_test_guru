@@ -80,6 +80,9 @@ en:
     result_message:
       passed_test_message: "You passed the test"
       failed_test_message: "You failed the test"
+    gist:
+      success: "Gist %{url} successfully saved!"
+      failure: "An error occured while saving gist"
 
   admin:
     tests:

@@ -82,6 +82,9 @@ ru:
     result_message:
       passed_test_message: "Вы прошли тест"
       failed_test_message: "Тест не пройден"
+    gist:
+      success: 'Gist %{url} успешно сохранен!'
+      failure: "Во время сохранения gist произошла ошибка"
 
   admin:
     tests:
