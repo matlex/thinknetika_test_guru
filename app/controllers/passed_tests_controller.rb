@@ -24,8 +24,14 @@ class PassedTestsController < ApplicationController
   def gist
     result = GistQuestionService.new(@current_test_passage.current_question).call
 
-    flash_options = if result.url?
-                      { success: t('.success', url: result.url) }
+    flash_options = if result.url? && result.html_url?
+                      Gist.create(
+                          question: @current_test_passage.current_question.body[0, 25],
+                          url: result.html_url,
+                          user: current_user
+                      )
+
+                      { success: t('.success', url: result.html_url) }
                     else
                       { error: t('.failure') }
                     end
