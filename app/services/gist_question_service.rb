@@ -1,5 +1,7 @@
 class GistQuestionService
 
+  SUCCESS_STATUSES = [200, 201, 202]
+
   def initialize(question, client: nil)
     @question = question
     @test = @question.test
@@ -8,6 +10,10 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    SUCCESS_STATUSES.include?(@client.last_response.status)
   end
 
   private

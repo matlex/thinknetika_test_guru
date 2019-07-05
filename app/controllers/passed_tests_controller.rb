@@ -22,11 +22,12 @@ class PassedTestsController < ApplicationController
   end
 
   def gist
-    result = GistQuestionService.new(@current_test_passage.current_question).call
+    service = GistQuestionService.new(@current_test_passage.current_question)
+    result = service.call
 
-    flash_options = if result.url? && result.html_url?
-                      Gist.create(
-                          question: @current_test_passage.current_question.body[0, 25],
+    flash_options = if service.success?
+                      current_user.gists.create(
+                          question: @current_test_passage.current_question,
                           url: result.html_url,
                           user: current_user
                       )
