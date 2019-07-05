@@ -1,0 +1,6 @@
+<tr>
+  <td scope="col"><%= gist.id %></td>
+  <td scope="col"><%= gist.question.body[0, 25] %></td>
+  <td scope="col"><%= link_to gist.url, gist.url, target: :blank %></td>
+  <td scope="col"><%= gist.user.email %></td>
+</tr>
