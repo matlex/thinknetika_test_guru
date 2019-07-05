@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_031746) do
+ActiveRecord::Schema.define(version: 2019_07_05_025153) do
 
   create_table "answers", force: :cascade do |t|
     t.string "body", null: false
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 2019_07_04_031746) do
   end
 
   create_table "gists", force: :cascade do |t|
-    t.string "question"
     t.string "url"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "question_id"
+    t.index ["question_id"], name: "index_gists_on_question_id"
     t.index ["user_id"], name: "index_gists_on_user_id"
   end
 
