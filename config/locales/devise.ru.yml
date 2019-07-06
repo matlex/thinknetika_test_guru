@@ -48,6 +48,7 @@ ru:
       new:
         header: "Стань Гуру! Начни с регистрации)"
         minimum_characters: "(минимум %{characters_min_amount} символов)"
+        button_register: "Регистрация"
     sessions:
       signed_in: "Вход в систему выполнен."
       signed_out: "Выход из системы выполнен."
