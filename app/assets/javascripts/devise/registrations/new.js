@@ -1,4 +1,6 @@
 document.addEventListener('turbolinks:load', function() {
+    const PASSWORD_MIN_LENGTH = 6;
+
     var password_field = document.getElementById('user_password');
     var confirmation_password_field = document.getElementById('user_password_confirmation');
 
@@ -10,7 +12,10 @@ document.addEventListener('turbolinks:load', function() {
         if (!password_field.value && !confirmation_password_field.value || password_field.value && !confirmation_password_field.value) {
             clearAllValidations();
         } else if (password_field.value && confirmation_password_field.value) {
-            if (password_field.value == confirmation_password_field.value) {
+            if (password_field.value == confirmation_password_field.value &&
+                password_field.value.length >= PASSWORD_MIN_LENGTH &&
+                confirmation_password_field.value.length >= PASSWORD_MIN_LENGTH) {
+
                 password_field.classList.remove('is-invalid');
                 confirmation_password_field.classList.remove('is-invalid');
 
