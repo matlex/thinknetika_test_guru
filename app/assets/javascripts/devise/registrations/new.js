@@ -4,8 +4,10 @@ document.addEventListener('turbolinks:load', function() {
     var password_field = document.getElementById('user_password');
     var confirmation_password_field = document.getElementById('user_password_confirmation');
 
-    password_field.addEventListener('input', validate);
-    confirmation_password_field.addEventListener('input', validate);
+    if (password_field && confirmation_password_field) {
+        password_field.addEventListener('input', validate);
+        confirmation_password_field.addEventListener('input', validate);
+    }
 
     function validate() {
         // remove validation classes when both fields or confirmation field is empty
