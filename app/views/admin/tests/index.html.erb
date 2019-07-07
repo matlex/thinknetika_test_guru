@@ -4,14 +4,20 @@
   <%= link_to t('.link_new_test'), new_admin_test_path %>
 </p>
 
-<table>
+<table class="table table-hover">
+  <thead class="thead-dark">
   <tr>
-    <th><%= t('tests.index.test_number') %></th>
-    <th><%= t('tests.index.title') %></th>
-    <th><%= t('tests.index.level') %></th>
-    <th><%= t('tests.index.category') %></th>
-    <th><%= t('tests.index.count_questions') %></th>
-    <th colspan="3"><%= t('tests.index.actions') %></th>
+    <th scope="col"><%= t('tests.index.test_number') %></th>
+    <th scope="col" class="sort-by-title pointer">
+      <%= t('tests.index.title') %>
+      <%= octicon 'arrow-up', class: 'text-success hide', height: 20 %>
+      <%= octicon 'arrow-down', class: 'text-success hide', height: 20 %>
+    </th>
+    <th scope="col"><%= t('tests.index.level') %></th>
+    <th scope="col"><%= t('tests.index.category') %></th>
+    <th scope="col"><%= t('tests.index.count_questions') %></th>
+    <th scope="col" colspan="3"><%= t('tests.index.actions') %></th>
   </tr>
+  </thead>
   <%= render @tests %>
 </table>

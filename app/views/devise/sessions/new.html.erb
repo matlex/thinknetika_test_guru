@@ -8,12 +8,12 @@
           <div class="form-group">
             <p>
               <%= f.label :email %>
-              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Enter email " %>
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Enter email" %>
             </p>
 
             <p>
               <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control ' %>
+              <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
             </p>
 
             <% if devise_mapping.rememberable? %>

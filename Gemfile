@@ -51,6 +51,7 @@ gem 'devise-i18n'
 # UI
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+gem 'octicons_helper'
 
 # Networking
 gem "octokit", "~> 4.0"

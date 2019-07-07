@@ -48,6 +48,7 @@ en:
       new:
         header: "Become a Guru! Just register)"
         minimum_characters: "(%{characters_min_amount} characters minimum)"
+        button_register: "Register"
     sessions:
       signed_in: "Signed in successfully."
       signed_out: "Signed out successfully."
