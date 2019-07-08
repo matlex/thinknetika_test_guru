@@ -110,6 +110,8 @@ en:
         link_to_back: "Back"
       update:
         success: "Test successfully updated."
+      form_inline:
+        submit: "OK"
     base:
       not_authorized_to_see_the_page: "You are not authorized to view this page!"
     navigation:

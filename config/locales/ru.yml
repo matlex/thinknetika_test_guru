@@ -112,6 +112,8 @@ ru:
         link_to_back: "Назад"
       update:
         success: "Тест успешно обновлен."
+      form_inline:
+        submit: "ОК"
     base:
       not_authorized_to_see_the_page: "Доступ к данной странице разрешен только администраторам"
     navigation:
