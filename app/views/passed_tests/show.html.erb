@@ -5,7 +5,11 @@
     <div class="card border-primary">
       <div class="card-body">
         <%= show_current_question_num_of_total %>
-        <%= show_progressbar %>
+        <%#= show_progressbar %>
+
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-progress-percentage="<%= get_progress_percentage %>"></div>
+        </div>
 
         <div class="card mt-3">
           <div class="card-body">

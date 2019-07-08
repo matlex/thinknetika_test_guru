@@ -6,6 +6,7 @@ module PassedTestsHelper
   end
 
   def show_progressbar
+    # not used yet since start using JS modifiers
     progress = (@current_test_passage.question_number / @current_test_passage.questions_count.to_f) * 100
     progress = progress.to_i
     output_string = """
@@ -14,6 +15,10 @@ module PassedTestsHelper
       </div>
       """
     output_string.html_safe
+  end
+
+  def get_progress_percentage
+    ((@current_test_passage.question_number / @current_test_passage.questions_count.to_f) * 100).to_i
   end
 
 end
