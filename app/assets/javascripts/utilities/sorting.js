@@ -17,14 +17,14 @@ function sortRowsByTitle() {
     var arrowUp = this.querySelector('.octicon-arrow-up');
     var arrowDown = this.querySelector('.octicon-arrow-down');
 
-    if (arrowUp.classList.contains('hide')) {
+    if (arrowUp.classList.contains('hidden')) {
         sortedRows.sort(compareRowsASC);
-        arrowUp.classList.remove('hide');
-        arrowDown.classList.add('hide')
+        arrowUp.classList.remove('hidden');
+        arrowDown.classList.add('hidden')
     } else {
         sortedRows.sort(compareRowsDESC);
-        arrowUp.classList.add('hide');
-        arrowDown.classList.remove('hide')
+        arrowUp.classList.add('hidden');
+        arrowDown.classList.remove('hidden')
     }
 
     var sortedTable = document.createElement('table');
