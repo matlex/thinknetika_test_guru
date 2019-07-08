@@ -8,7 +8,7 @@ document.addEventListener('turbolinks:load', function(){
     }
 
     const errors = document.querySelector('.resource-errors');
-    if (errors) {
+    if (errors && controls.length) {
         const resourceId = errors.dataset.resourceId;
         formInlineHandler(resourceId)
     }
