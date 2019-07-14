@@ -59,6 +59,7 @@ ru:
       welcome_back_html: "С возвращением, <b>%{username}</b>!"
       signup: "Регистрация"
       login: "Вход"
+      leave_feedback: "Оставить отзыв"
 
   tests:
     index:
@@ -143,3 +144,9 @@ ru:
   question_num_of_total_html: "<h3>Вопрос № %{question_number} из %{total}</h3>"
   link_to_delete: "Удалить"
   delete_question_confirm_text: "Вы уверены, что хотите удалить вопрос?"
+  feedbacks:
+    create:
+      success: "Мы получили ваше сообщение и вскоре его рассмотрим"
+      error: "При отправке фидбека произошла ошибка. Попробуйте еще раз."
+    form:
+      send: "Отправить"

@@ -1,0 +1,7 @@
+<%= form_for @feedback do |form| %>
+  <p>
+    <%= form.text_area :body, id: :feedback_body, rows: 7, cols: 60, placeholder: ' Введите сообщение' %>
+  </p>
+
+  <p><%= form.submit t('.send') %></p>
+<% end %>

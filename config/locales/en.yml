@@ -57,6 +57,7 @@ en:
       welcome_back_html: "Welcome back, <b>%{username}</b>!"
       signup: "Sign Up"
       login: "Log In"
+      leave_feedback: "Leave feedback"
 
   tests:
     index:
@@ -141,3 +142,9 @@ en:
   question_num_of_total_html: "<h3>Question # %{question_number} of %{total}</h3>"
   link_to_delete: "Delete"
   delete_question_confirm_text: "Do you really want to delete question?"
+  feedbacks:
+    create:
+      success: "We have received your message and will be in touch soon!"
+      error: "There was an error sending your message. Please try again."
+    form:
+      send: "Send"
