@@ -1,5 +1,5 @@
-user1 = User.create(first_name: 'Matt', last_name: 'Ustinov', email: 'matt@mail.com')
-user2 = User.create(first_name: 'Bob', last_name: 'Supp', email: 'bsupp@mail.com')
+user1 = User.create(first_name: 'Matt', last_name: 'Ustinov', email: 'matlex@yandex.ru', password: '123456', password_confirmation: '123456')
+user2 = Admin.create(first_name: 'Bob', last_name: 'Supp', email: 'mat.ustinov@gmail.com', password: '123456', password_confirmation: '123456')
 
 category1 = Category.create(title: 'Programming')
 category2 = Category.create(title: 'Driving')
