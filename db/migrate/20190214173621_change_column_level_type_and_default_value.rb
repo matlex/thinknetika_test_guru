@@ -1,7 +1,7 @@
 class ChangeColumnLevelTypeAndDefaultValue < ActiveRecord::Migration[5.2]
   def up
-    change_column         :tests, :level, :integer
-    change_column_default :tests, :level, 1
+    execute "ALTER TABLE tests ALTER level DROP DEFAULT;"
+    change_column :tests, :level, :integer, using: 'level::integer', default: 1
   end
 
   def down
