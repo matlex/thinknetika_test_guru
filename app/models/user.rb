@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :passed_tests
   has_many :tests, through: :passed_tests
 
+  scope :admins, -> { where(type: 'Admin') }
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :email,
@@ -33,5 +35,9 @@ class User < ApplicationRecord
 
   def admin?
     self.type == "Admin"
+  end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 end

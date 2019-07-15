@@ -1,0 +1,12 @@
+<h1>A user <%= @user.full_name %> was leaved feedback on TestGuru!</h1>
+<br>
+<br>
+<h2>Feedback message:</h2>
+
+<p>
+  <%= @message %>
+</p>
+
+<p>
+  User email: <%= mail_to @user.email %>
+</p>
