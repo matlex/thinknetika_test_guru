@@ -144,6 +144,7 @@ ru:
       admin_panel_title: "Панель администратора"
 
   question_num_of_total_html: "<h3>Вопрос № %{question_number} из %{total}</h3>"
+  total_questions_of_total_html: "<h3>Вопрос № %{total} из %{total}</h3>"
   link_to_delete: "Удалить"
   delete_question_confirm_text: "Вы уверены, что хотите удалить вопрос?"
   feedbacks:

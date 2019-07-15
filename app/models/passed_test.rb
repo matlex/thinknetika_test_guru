@@ -22,7 +22,7 @@ class PassedTest < ApplicationRecord
   end
 
   def question_number
-    test.questions.order(id: :asc).pluck(:id).index(current_question.id) + 1
+    test.questions.order(id: :asc).pluck(:id).index(current_question.id)
   end
 
   def questions_count

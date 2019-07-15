@@ -142,6 +142,7 @@ en:
       admin_panel_title: "Admin Panel"
 
   question_num_of_total_html: "<h3>Question # %{question_number} of %{total}</h3>"
+  total_questions_of_total_html: "<h3>Question # %{total} of %{total}</h3>"
   link_to_delete: "Delete"
   delete_question_confirm_text: "Do you really want to delete question?"
   feedbacks:

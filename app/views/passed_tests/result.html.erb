@@ -1,6 +1,15 @@
 <div class="row justify-content-center mt-3">
   <div class="col col-md-6 col-lg-12">
 
+    <div class="card border-primary">
+      <div class="card-body">
+        <%= t('total_questions_of_total_html', total: @current_test_passage.questions_count) %>
+        <div class="progress">
+          <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-progress-percentage="<%= 100 %>"></div>
+        </div>
+      </div>
+    </div>
+
     <div class="card">
       <div class="card-header text-center">
         <h1><%= t('.header', title: @current_test_passage.test.title) %></h1>
