@@ -10,6 +10,10 @@ class PassedTestsController < ApplicationController
   end
 
   def update
+    if params[:answer_ids].nil?
+      redirect_to @current_test_passage, flash: { error: t('.please_choose_answer') } and return
+    end
+
     @current_test_passage.accept!(params[:answer_ids])
 
     if @current_test_passage.completed?
@@ -37,7 +41,7 @@ class PassedTestsController < ApplicationController
                       { error: t('.failure') }
                     end
 
-    redirect_to @current_test_passage, :flash => flash_options
+    redirect_to @current_test_passage, flash: flash_options
   end
 
   private

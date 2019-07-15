@@ -86,6 +86,8 @@ ru:
     gist:
       success: 'Gist %{url} успешно сохранен!'
       failure: "Во время сохранения gist произошла ошибка"
+    update:
+      please_choose_answer: "Пожалуйста выберите хотя бы один ответ"
 
   admin:
     tests:

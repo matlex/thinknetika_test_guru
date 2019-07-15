@@ -84,6 +84,8 @@ en:
     gist:
       success: "Gist %{url} successfully saved!"
       failure: "An error occured while saving gist"
+    update:
+      please_choose_answer: "Please choose at least one answer"
 
   admin:
     tests:
