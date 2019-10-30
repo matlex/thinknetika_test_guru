@@ -42,7 +42,7 @@ group :development, :test do
 end
 
 # Auth
-gem 'devise', '~> 4.0'
+gem 'devise', '~> 4.7'
 
 # Localization
 gem 'rails-i18n', '~> 5.1.0'
